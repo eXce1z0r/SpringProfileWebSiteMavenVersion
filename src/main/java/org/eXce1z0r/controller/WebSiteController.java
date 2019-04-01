@@ -1,27 +1,20 @@
 package org.eXce1z0r.controller;
 
-import java.security.Principal;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.eXce1z0r.model.AccountModel;
 import org.eXce1z0r.model.UserDetailsModel;
 import org.eXce1z0r.service.ProfileService;
-import org.eXce1z0r.service.WebSitePageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @Controller
 public class WebSiteController 
@@ -170,7 +163,7 @@ public class WebSiteController
 			wrongFieldsList+="email, ";
 		}
 			
-		if((fieldVal="{noop}"+req.getParameter("inputPassword"))!=null)
+		if((fieldVal="{noop}"+req.getParameter("inputPassword"))!="{noop}")
 		{
 			aM.setPassword(fieldVal);
 		}
@@ -199,6 +192,8 @@ public class WebSiteController
 			if(service.registerNewAccount(aM))
 			{
 				result_message= "You successfully registered!!!";
+				req.setAttribute("message", result_message);
+				
 				return "login_page";
 			}
 			else

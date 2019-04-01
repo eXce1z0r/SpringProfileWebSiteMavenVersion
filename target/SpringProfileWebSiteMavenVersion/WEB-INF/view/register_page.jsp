@@ -11,7 +11,7 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	    <meta name="generator" content="Jekyll v3.8.5">
-	    <title>Cover Template · Bootstrap</title>
+	    <title>SpringProfileWebSite</title>
 	
 	    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
 	
@@ -51,6 +51,10 @@
 					</nav>
 			    </div>
 			</header>
+			
+			<div class="alert alert-danger" role="alert" style='display: <%= request.getAttribute("message")!=null?"inline":"none"%>'>
+				<%= request.getAttribute("message") %>
+			</div>
 		
 			<main role="main" class="inner cover">
 				<form action="register" method="POST" class="form-signin">
@@ -60,7 +64,7 @@
 					<label for="inputEmail" class="sr-only">Email address</label>
 					<input type="email" name="inputEmail" id="inputEmailID" class="form-control" placeholder="Email address" required autofocus>
 					<label for="inputPassword" class="sr-only">Password</label>
-					<input type="password" name="inputPassword" id="inputPasswordID" class="form-control" placeholder="Password" required>
+					<input type="text" name="inputPassword" id="inputPasswordID" class="form-control" placeholder="Password" required>
 					
 					<label for="inputUserName" class="sr-only">Name</label>
 					<input type="text" name="inputUserName" id="inputUserNameID" class="form-control" placeholder="User name" required autofocus>

@@ -11,7 +11,7 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	    <meta name="generator" content="Jekyll v3.8.5">
-	    <title>Cover Template · Bootstrap</title>
+	    <title>SpringProfileWebSite</title>
 	
 	    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
 	
@@ -51,6 +51,10 @@
 					</nav>
 			    </div>
 			</header>
+			
+			<div class="alert alert-success" role="alert" style='display: <%= request.getAttribute("message")!=null?"inline":"none"%>'>
+				<%= request.getAttribute("message") %>
+			</div>
 		
 			<main role="main" class="inner cover">
 				<form action="<spring:url value='login'/>" method="POST" class="form-signin">
