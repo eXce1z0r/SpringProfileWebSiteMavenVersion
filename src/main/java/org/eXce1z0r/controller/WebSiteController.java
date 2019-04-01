@@ -55,9 +55,6 @@ public class WebSiteController
 			}
 		}
 
-		/*req.setAttribute("username", userCreds.getUsername());
-		req.setAttribute("password", userCreds.getPassword());
-		req.setAttribute("role", userCreds.getAuthorities());*/
 		return "profile_page";
 	}
 	
